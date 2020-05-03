@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "397591345008",
+    "firebase_url": "https://ecommerce-b8205.firebaseio.com",
+    "project_id": "ecommerce-b8205",
+    "storage_bucket": "ecommerce-b8205.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397591345008:android:69f81b5928668eb8a801b5",
+        "android_client_info": {
+          "package_name": "br.com.vieira.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397591345008-jao3dtssvm3jsc0f1bb8tq7csuim50mb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5ur303AnnRM1A55izPPpxRCN0qQ15RLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397591345008-jao3dtssvm3jsc0f1bb8tq7csuim50mb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
