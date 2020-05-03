@@ -7,7 +7,7 @@ class ProductData {
   String description;
   double price;
   List images;
-  List sizes;
+  int count;
 
   ProductData.fromdocument(DocumentSnapshot snapshot) {
     id = snapshot.documentID;
@@ -15,6 +15,6 @@ class ProductData {
     description = snapshot.data['description'];
     price = snapshot.data['price'];
     images = snapshot.data['images'];
-    sizes = snapshot.data['sizes'] + 0.0;
+    count = snapshot.data['amount'];
   }
 }
