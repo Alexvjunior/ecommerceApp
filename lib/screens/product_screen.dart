@@ -3,10 +3,10 @@ import 'package:ecommerce/datas/product_data.dart';
 import 'package:ecommerce/tiles/product_tile.dart';
 import 'package:flutter/material.dart';
 
-class CategoryScreen extends StatelessWidget {
+class ProductSceen extends StatelessWidget {
   final DocumentSnapshot snapshot;
 
-  CategoryScreen(this.snapshot);
+  ProductSceen(this.snapshot);
 
   @override
   Widget build(BuildContext context) {
