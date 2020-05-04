@@ -38,6 +38,30 @@ class _ProductScreenState extends State<ProductScreen> with DefaultWidgets {
                   maxLines: 3,
                 ),
                 defaultPrice(product.price, context),
+                SizedBox(
+                  height: 16,
+                ),
+                SizedBox(
+                    height: 44,
+                    child: RaisedButton(
+                        color: primaryColor,
+                        textColor: Colors.white,
+                        onPressed: product.count > 0 ? () {} : null,
+                        child: Text(
+                          'Adicionar ao carrinho',
+                          style: TextStyle(fontSize: 18),
+                        ))),
+                SizedBox(height: 16),
+                Text(
+                  'Descriçao',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  maxLines: 3,
+                ),
+                Text(
+                  product.description,
+                  style: TextStyle(fontSize: 16),
+                  maxLines: 3,
+                ),
               ],
             ),
           )
