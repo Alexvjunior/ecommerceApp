@@ -1,31 +1,28 @@
-import 'package:ecommerce/screens/singup_screen.dart';
 import 'package:ecommerce/utils/widgets.dart';
-import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget with DefaultWidgets {
+class SingupScreen extends StatelessWidget with DefaultWidgets {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Login'), centerTitle: true, actions: <Widget>[
-        FlatButton(
-          child: Text(
-            'CRIAR CONTA',
-            style: TextStyle(fontSize: 15),
-          ),
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => SingupScreen()));
-          },
-        )
-      ]),
+      appBar: defaultAppBar(title: 'Cadastro'),
       body: Form(
         key: _formKey,
         child: ListView(
           padding: EdgeInsets.all(16),
           children: <Widget>[
+            TextFormField(
+              validator: (text) {
+                if (text == null || text.isEmpty)
+                  return 'Nome Invalido';
+              },
+              decoration: InputDecoration(hintText: "Nome Completo"),
+            ),
+             SizedBox(
+              height: 16,
+            ),
             TextFormField(
               validator: (text) {
                 if (!EmailValidator.validate(text)) return 'E-mail Invalido';
@@ -44,17 +41,6 @@ class LoginScreen extends StatelessWidget with DefaultWidgets {
               decoration: InputDecoration(hintText: "Senha"),
               obscureText: true,
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: FlatButton(
-                padding: EdgeInsets.zero,
-                onPressed: () {},
-                child: Text(
-                  'Esqueci minha Senha',
-                  textAlign: TextAlign.right,
-                ),
-              ),
-            ),
             SizedBox(
               height: 16,
             ),
@@ -64,7 +50,7 @@ class LoginScreen extends StatelessWidget with DefaultWidgets {
                   textColor: Colors.white,
                   color: Theme.of(context).primaryColor,
                   child: Text(
-                    'Entrar',
+                    'Criar Conta',
                     style: TextStyle(fontSize: 18),
                   ),
                   onPressed: () {

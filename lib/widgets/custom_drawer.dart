@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/login_screen.dart';
 import 'package:ecommerce/tiles/drawer_tile.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +61,10 @@ class CustomDrawer extends StatelessWidget {
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold),
                             ),
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                            },
                           )
                         ],
                       ),
@@ -70,7 +74,7 @@ class CustomDrawer extends StatelessWidget {
               ),
               Divider(),
               DrawerTile(Icons.home, "Inicio", pageController, 0),
-              DrawerTile(Icons.list, "Produtos", pageController,1),
+              DrawerTile(Icons.list, "Produtos", pageController, 1),
               DrawerTile(Icons.location_on, "Loja", pageController, 2),
               DrawerTile(
                   Icons.playlist_add_check, "Meus Pedidos", pageController, 3),

@@ -1,5 +1,6 @@
 import 'package:ecommerce/screens/home_screen.dart';
 import 'package:ecommerce/screens/login_screen.dart';
+import 'package:ecommerce/screens/singup_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           primaryColor: Color.fromARGB(255, 4, 125, 141)),
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: HomeScreen(),
     );
   }
 }

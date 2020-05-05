@@ -1,11 +1,12 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce/screens/singup_screen.dart';
 
 class DefaultWidgets {
   AppBar defaultAppBar({String title = ''}) {
     return AppBar(
-      title: Text(title),
-      centerTitle: true,
+        title: Text(title),
+        centerTitle: true,
     );
   }
 
