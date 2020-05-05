@@ -1,6 +1,8 @@
+import 'package:ecommerce/models/user_model.dart';
 import 'package:ecommerce/screens/login_screen.dart';
 import 'package:ecommerce/tiles/drawer_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class CustomDrawer extends StatelessWidget {
   final PageController pageController;
@@ -78,6 +80,12 @@ class CustomDrawer extends StatelessWidget {
               DrawerTile(Icons.location_on, "Loja", pageController, 2),
               DrawerTile(
                   Icons.playlist_add_check, "Meus Pedidos", pageController, 3),
+              ScopedModelDescendant<UserModel>(builder: (context, child, user) {
+                if (user.isLoading) {
+                  return Container();
+                }
+                return DrawerTile(Icons.settings, "Gerenciar Loja", pageController, 4);
+              })
             ],
           )
         ],
