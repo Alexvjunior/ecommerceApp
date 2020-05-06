@@ -14,9 +14,11 @@ class _SingupScreenState extends State<SingupScreen> with DefaultWidgets {
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        key: _scaffoldKey,
         appBar: defaultAppBar(title: 'Cadastro'),
         body: ScopedModelDescendant<UserModel>(builder: (context, child, user) {
           if (user.isLoading) {
@@ -91,6 +93,23 @@ class _SingupScreenState extends State<SingupScreen> with DefaultWidgets {
         }));
   }
 
-  void _onSuccess() {}
-  void _onFail() {}
+  void _onSuccess() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Usuario criado com sucesso!"),
+      backgroundColor: Theme.of(context).primaryColor,
+      duration: Duration(seconds: 2),
+    ));
+
+    Future.delayed(Duration(seconds: 2)).then((_) {
+      Navigator.of(context).pop();
+    });
+  }
+
+  void _onFail() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Falha ao criar o usuario!"),
+      backgroundColor: Colors.redAccent,
+      duration: Duration(seconds: 3),
+    ));
+  }
 }

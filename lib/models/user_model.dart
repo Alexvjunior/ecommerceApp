@@ -23,7 +23,7 @@ class UserModel extends Model {
         .then((user) async {
       firebaseUser = user;
       await _saveUserData(userData);
-      onSuccess;
+      onSuccess();
       isLoading = false;
       notifyListeners();
     }).catchError((e) {
@@ -41,7 +41,18 @@ class UserModel extends Model {
     notifyListeners();
   }
 
+  void singOut() async {
+    await _auth.signOut();
+    userData = Map();
+    firebaseUser = null;
+    notifyListeners();
+  }
+
   void recoverPass() {}
+
+  bool isLoggedIn() {
+    return firebaseUser != null;
+  }
 
   Future<Null> _saveUserData(Map<String, dynamic> userData) async {
     this.userData = userData;
