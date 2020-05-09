@@ -5,8 +5,8 @@ import 'package:ecommerce/screens/singup_screen.dart';
 class DefaultWidgets {
   AppBar defaultAppBar({String title = ''}) {
     return AppBar(
-        title: Text(title),
-        centerTitle: true,
+      title: Text(title),
+      centerTitle: true,
     );
   }
 
@@ -35,4 +35,5 @@ class DefaultWidgets {
       ),
     );
   }
+
 }
